@@ -1,2 +1,5 @@
 # ignore the private data used for demonstration.
 Recognition/
+
+# ignore the big lfw dataset
+lfw/

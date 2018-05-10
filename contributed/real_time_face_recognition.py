@@ -24,6 +24,7 @@ Based on code from https://github.com/shanren7/real_time_face_recognition
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
 import argparse
 import sys
 import time
@@ -39,7 +40,7 @@ def add_overlays(frame, faces, frame_rate):
             face_bb = face.bounding_box.astype(int)
             cv2.rectangle(frame,
                           (face_bb[0], face_bb[1]), (face_bb[2], face_bb[3]),
-                          (0, 255, 0), 2)
+                          (0, 0, 255), 2)
             if face.name is not None:
                 cv2.putText(frame, face.name, (face_bb[0], face_bb[3]),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0),
@@ -56,7 +57,17 @@ def main(args):
     frame_rate = 0
     frame_count = 0
 
-    video_capture = cv2.VideoCapture(0)
+    # ------------------------------------------------------------------------------------
+    # Added by Animesh to handle the processing of Video files instead of direct
+    # webcam
+    # ------------------------------------------------------------------------------------
+    if args.file is None:
+        source = 0  # select the default camera device for processing
+    else:
+        source = args.file
+    # ------------------------------------------------------------------------------------
+
+    video_capture = cv2.VideoCapture(source)  # replace the default 0 with the source
     face_recognition = face.Recognition()
     start_time = time.time()
 
@@ -96,6 +107,8 @@ def parse_arguments(argv):
 
     parser.add_argument('--debug', action='store_true',
                         help='Enable some debug outputs.')
+    parser.add_argument('--file', action='store', default=None,
+                        help='Video file path for demo if webcam is not present')
     return parser.parse_args(argv)
 
 

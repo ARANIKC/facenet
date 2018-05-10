@@ -1,0 +1,12 @@
+../../data/recognition/aligned/leonard/image-6.png 359 60 655 458
+../../data/recognition/aligned/leonard/image-4.png 197 42 375 265
+../../data/recognition/aligned/leonard/image-2.png 127 52 356 335
+../../data/recognition/aligned/leonard/image-3.png 60 40 163 166
+../../data/recognition/aligned/leonard/image-5.png 502 104 759 403
+../../data/recognition/aligned/leonard/image-1.png 203 38 445 352
+../../data/recognition/aligned/sheldon /image-6.png 388 9 580 273
+../../data/recognition/aligned/sheldon /image-4.png 215 15 385 244
+../../data/recognition/aligned/sheldon /image-2.png 209 49 380 272
+../../data/recognition/aligned/sheldon /image-3.png 728 153 1187 774
+../../data/recognition/aligned/sheldon /image-5.png 228 19 375 212
+../../data/recognition/aligned/sheldon /image-1.png 96 77 263 292
